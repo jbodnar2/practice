@@ -1,0 +1,30 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Clear Sans", serif;
+}
+
+.grid {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  min-height: 100vh;
+  background-color: var(--color-light-gray);
+}
+
+.container {
+  margin: 0 auto;
+  width: 99vw;
+  max-width: 1250px;
+}
+
+.header,
+.footer {
+  background-color: var(--color-dark);
+  color: var(--color-light-gray);
+  min-height: var(--spacer-1);
+}

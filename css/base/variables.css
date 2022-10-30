@@ -1,0 +1,23 @@
+:root {
+  /* ***** Color ***** */
+  --color-blue: #3f82ff;
+  --color-dark: #001336;
+  --color-gray: #737373;
+  --color-light-gray: #f2f2f2;
+  --color-white: #ffffff;
+  --color-yellow: #ffbc3f;
+
+  /* ***** Fonts ***** */
+  --font-sans: "Clear Sans";
+  --font-serif: "Merriweather";
+  --font-size: 1.125rem;
+  --fw-bold: 700;
+  --fw-medium: 500;
+  --fw-normal: 400;
+  --fw-light: 300;
+  --fw-thin: 100;
+
+  /* ***** Spacing ***** */
+  --spacer-1: 1rem;
+  --spacer-2: calc(var(--spacer-1 * 2));
+}
