@@ -6,7 +6,15 @@
 
 body {
   margin: 0;
-  font-family: "Clear Sans", serif;
+  font-family: var(--font-sans);
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1;
 }
 
 .grid {
@@ -22,9 +30,14 @@ body {
   max-width: 1250px;
 }
 
+.main {
+  contain: layout;
+}
+
 .header,
 .footer {
   background-color: var(--color-dark);
   color: var(--color-light-gray);
   min-height: var(--spacer-1);
+  contain: layout;
 }
