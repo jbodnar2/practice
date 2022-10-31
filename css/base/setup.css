@@ -31,7 +31,7 @@ h3 {
 }
 
 .main {
-  contain: layout;
+  contain: content;
 }
 
 .header,
@@ -39,5 +39,5 @@ h3 {
   background-color: var(--color-dark);
   color: var(--color-light-gray);
   min-height: var(--spacer-1);
-  contain: layout;
+  contain: content;
 }

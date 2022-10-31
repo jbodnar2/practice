@@ -243,7 +243,7 @@ h3 {
 }
 
 .main {
-  contain: layout;
+  contain: content;
 }
 
 .header,
@@ -254,5 +254,5 @@ h3 {
   color: var(--color-light-gray);
   min-height: 1rem;
   min-height: var(--spacer-1);
-  contain: layout;
+  contain: content;
 }
