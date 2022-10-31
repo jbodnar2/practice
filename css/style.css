@@ -206,7 +206,6 @@
 
   /* ***** Spacing ***** */
   --spacer-1: 1rem;
-  --spacer-2: calc(var(--spacer-1 * 2));
 }
 
 *,
