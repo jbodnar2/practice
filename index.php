@@ -18,8 +18,6 @@
       <main class="main container">
         <!-- Main content -->
 
-        <?php print_r($GLOBALS); ?>
-
         <!-- Main Content End -->
       </main>
       <footer class="footer"></footer>
