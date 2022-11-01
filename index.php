@@ -11,14 +11,14 @@
     <div class="grid">
       <header class="header">
         <div class="container">
-          <h1>Practice | Index.html</h1>
+          <h1>Practice | Index.php</h1>
         </div>
       </header>
       <nav class="nav"></nav>
       <main class="main container">
         <!-- Main content -->
 
-        <?php echo "Hello!"; ?>
+        <?php print_r($GLOBALS); ?>
 
         <!-- Main Content End -->
       </main>

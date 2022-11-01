@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "start": "node ./serve.js & postcss css/main.css --output css/style.css --verbose --watch --map",
+    "php:serve": "php -S localhost:3000 & postcss css/main.css --output css/style.css --verbose --watch --map",
     "prettier:write": "prettier --write ./",
     "prettier": "prettier --check ./",
     "postcss": "postcss css/main.css --output css/style.css --verbose",
@@ -16,6 +17,7 @@
     "arrowParens": "always"
   },
   "dependencies": {
+    "@prettier/plugin-php": "^0.19.1",
     "autoprefixer": "^10.4.13",
     "live-server": "^1.2.2",
     "normalize.css": "^8.0.1",
