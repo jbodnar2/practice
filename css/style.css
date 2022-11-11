@@ -383,8 +383,8 @@ template {
   --fw-light: 300;
 
   /* ***** Spacing ***** */
-  --line-height-body: 1.5;
-  --line-height-headings: 1;
+  --line-height-body: 1.6;
+  --line-height-headings: 1.125;
   --spacer-1: 1rem;
 }
 
@@ -402,14 +402,14 @@ body {
   font-family: var(--font-base);
   font-size: 1rem;
   font-size: var(--font-size);
-  line-height: 1.5;
+  line-height: 1.6;
   line-height: var(--line-height-body);
 }
 
 h1,
 h2,
 h3 {
-  line-height: 1;
+  line-height: 1.125;
   line-height: var(--line-height-headings);
 }
 
@@ -417,8 +417,6 @@ h3 {
   display: grid;
   grid-template-rows: auto auto 1fr auto;
   min-height: 100vh;
-  background-color: #f2f2f2;
-  background-color: var(--color-light-gray);
 }
 
 .container {
