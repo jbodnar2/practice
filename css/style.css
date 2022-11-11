@@ -355,9 +355,8 @@ template {
 @font-face {
   font-family: "Figtree";
   src: url("../../fonts/Figtree-Variable.ttf") format("truetype");
-  font-stretch: 25% 150%;
   font-display: swap;
-  font-wdight: 300 900;
+  font-weight: 300 900;
 }
 
 :root {

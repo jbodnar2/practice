@@ -44,6 +44,11 @@
           max-width: 100%;
         }
 
+        .resource-card__title {
+          text-transform: capitalize;
+          font-weight: var(--fw-bold);
+        }
+
         .resource-card__more-link {
           display: inline-block;
         }
