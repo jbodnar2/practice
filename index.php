@@ -18,10 +18,13 @@
     </header>
     <nav class="nav"></nav>
     <main class="main container">
+      <h2>Main Content</h2>
       <!-- Main content -->
 
 
       <!-- Main Content End -->
+      <iframe src="html-includes/include-a.html" frameborder="0" allow="fullscreen" loading="lazy"
+        onload="this.before(...(this.contentWindow.document.body||this.contentWindow.document).children);this.remove()"></iframe>
     </main>
     <footer class="footer"></footer>
   </div>
