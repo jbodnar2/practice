@@ -87,7 +87,7 @@ abbr[title] {
   text-decoration: underline; /* 2 */
   text-decoration: underline;
   -webkit-text-decoration: underline dotted currentColor;
-          text-decoration: underline dotted currentColor; /* 2 */
+  text-decoration: underline dotted currentColor; /* 2 */
 }
 
 /**
@@ -176,7 +176,8 @@ textarea {
  */
 
 button,
-input { /* 1 */
+input {
+  /* 1 */
   overflow: visible;
 }
 
@@ -186,7 +187,8 @@ input { /* 1 */
  */
 
 button,
-select { /* 1 */
+select {
+  /* 1 */
   text-transform: none;
 }
 
@@ -367,9 +369,9 @@ template {
   --color-yellow: #ffbc3f;
 
   /* ***** Fonts ***** */
-  --font-base: "Figtree", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont,
-    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
-    sans-serif;
+  --font-base: "Figtree", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
+    Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   --font-size: 1rem;
   --fw-black: 900;
   --fw-extra-bold: 800;
@@ -393,9 +395,9 @@ template {
 
 body {
   margin: 0;
-  font-family: "Figtree", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont,
-    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Figtree", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
+    Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-family: var(--font-base);
   font-size: 1rem;
   font-size: var(--font-size);
