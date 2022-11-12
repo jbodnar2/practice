@@ -4,7 +4,6 @@
   "type": "module",
   "scripts": {
     "start": "node ./serve.js & postcss css/main.css --output css/style.css --verbose --watch --map",
-    "php:serve": "php -S localhost:3000 & postcss css/main.css --output css/style.css --verbose --watch --map",
     "prettier:write": "prettier --write ./",
     "prettier": "prettier --check ./",
     "postcss": "postcss css/main.css --output css/style.css --verbose",
