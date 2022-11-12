@@ -1,4 +1,6 @@
 @import "../node_modules/normalize.css/normalize.css";
-@import "./base/fonts.css";
-@import "./base/variables.css";
-@import "./base/setup.css";
+@import "./src/fonts.css";
+@import "./src/variables.css";
+@import "./src/setup.css";
+@import "./src/utilities.css";
+@import "./src/cards.css";

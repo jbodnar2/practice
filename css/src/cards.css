@@ -1,0 +1,50 @@
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 1rem;
+  overflow: visible;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  border: 1px solid hsl(0 0% 0% / 0.125);
+  box-shadow: 0px 2px 4px hsl(0 0% 0% / 0.125);
+}
+
+.card__image {
+  object-fit: cover;
+  max-width: 100%;
+}
+
+.card__title {
+  text-transform: capitalize;
+  font-weight: var(--fw-bold);
+}
+
+.card__more-link {
+  display: inline-block;
+}
+
+.card__more-button {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: var(--fs-small, 0.75rem);
+  border: 1px solid var(--color-dark);
+  display: block;
+  text-align: center;
+  padding: 1em;
+}
+
+.card__description {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+dialog::backdrop {
+  background: var(--color-dark, hsl(240 43% 12% / 0.99));
+}

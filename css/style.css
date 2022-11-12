@@ -360,19 +360,29 @@ template {
 }
 
 :root {
-  /* ***** Colors ***** */
-  --color-blue: #3f82ff;
-  --color-dark: #001336;
-  --color-gray: #737373;
-  --color-light-gray: #f2f2f2;
-  --color-white: #ffffff;
-  --color-yellow: #ffbc3f;
+  /* ----- Colors ----- */
+  --color-dark: hsl(240, 43%, 12%);
+  --color-base: hsl(249, 50%, 43%);
+  --color-light: hsl(249, 100%, 95%);
 
-  /* ***** Fonts ***** */
+  --color-accent: hsl(39, 100%, 51%);
+  --color-white: hsl(0, 0%, 100%);
+  --color-light-gray: hsl(0, 0%, 98%);
+
+  /* ----- Font sizing ----- */
+  --fs-site-title: 4.209rem;
+  --fs-biggest: 3.157rem;
+  --fs-bigger: 2.369rem;
+  --fs-big: 1.33rem;
+  --fs-normal: 1rem;
+  --fs-small: 0.75rem;
+
+  /* ----- Font family ----- */
   --font-base: "Figtree", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
     Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  --font-size: 1rem;
+
+  /* ----- Font weights ----- */
   --fw-black: 900;
   --fw-extra-bold: 800;
   --fw-bold: 700;
@@ -381,10 +391,9 @@ template {
   --fw-regular: 400;
   --fw-light: 300;
 
-  /* ***** Spacing ***** */
-  --line-height-body: 1.6;
-  --line-height-headings: 1.125;
-  --spacer-1: 1rem;
+  /* ----- Line Heights ----- */
+  --line-height-body: 1.5;
+  --line-height-headings: 1;
 }
 
 *,
@@ -394,27 +403,39 @@ template {
 }
 
 body {
-  margin: 0;
   font-family: "Figtree", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
     Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-family: var(--font-base);
-  font-size: 1rem;
   font-size: var(--font-size);
-  line-height: 1.6;
+  line-height: 1.5;
   line-height: var(--line-height-body);
+}
+
+h1 {
+  font-size: 4.209rem;
+  font-size: var(--fs-site-title);
+  font-weight: 700;
+  font-weight: var(--fw-bold);
+}
+
+h2 {
+  font-size: 3.157rem;
+  font-size: var(--fs-biggest);
+  font-weight: 300;
+  font-weight: var(--fw-light);
 }
 
 h1,
 h2,
 h3 {
-  line-height: 1.125;
+  line-height: 1;
   line-height: var(--line-height-headings);
 }
 
-.grid {
+.parent-grid {
   display: grid;
-  grid-template-rows: auto auto 1fr auto;
+  grid-template-rows: 350px minmax(50px, auto) 1fr auto;
   min-height: 100vh;
 }
 
@@ -422,20 +443,100 @@ h3 {
   margin: 0 auto;
   width: 99vw;
   max-width: 1250px;
-}
-
-.main {
-  /* See https://developer.mozilla.org/en-US/docs/Web/CSS/contain */
-  contain: content;
+  contain: layout;
 }
 
 .header,
 .footer {
-  background-color: #001336;
+  background-color: hsl(240, 43%, 12%);
   background-color: var(--color-dark);
-  color: #f2f2f2;
-  color: var(--color-light-gray);
-  min-height: 1rem;
-  min-height: var(--spacer-1);
-  contain: content;
+  color: hsl(0, 0%, 100%);
+  color: var(--color-white);
+  min-height: 1ch;
+}
+
+.header {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  place-items: center;
+}
+
+.header__tagline {
+  font-size: 1.33rem;
+  font-size: var(--fs-big);
+}
+
+.color-accent {
+  color: hsl(39, 100%, 51%);
+  color: var(--color-accent);
+}
+
+/* ----- utilities.css ----- */
+
+/* Use to set proportional vertical rhythm */
+
+.flow-content > * {
+  margin: 0;
+}
+
+.flow-content > * + * {
+  margin-top: 1rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-gap: 1rem;
+  gap: 1rem;
+  overflow: visible;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  border: 1px solid hsla(0, 0%, 0%, 0.125);
+  box-shadow: 0px 2px 4px hsla(0, 0%, 0%, 0.125);
+}
+
+.card__image {
+  -o-object-fit: cover;
+  object-fit: cover;
+  max-width: 100%;
+}
+
+.card__title {
+  text-transform: capitalize;
+  font-weight: 700;
+  font-weight: var(--fw-bold);
+}
+
+.card__more-link {
+  display: inline-block;
+}
+
+.card__more-button {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-size: var(--fs-small, 0.75rem);
+  border: 1px solid hsl(240, 43%, 12%);
+  border: 1px solid var(--color-dark);
+  display: block;
+  text-align: center;
+  padding: 1em;
+}
+
+.card__description {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+dialog::backdrop {
+  background: hsl(240, 43%, 12%);
+  background: var(--color-dark, hsla(240, 43%, 12%, 0.99));
 }
