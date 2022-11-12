@@ -21,7 +21,6 @@
       <h2>Main Content</h2>
       <!-- Main content -->
 
-
       <!-- Main Content End -->
     </main>
     <footer class="footer"></footer>
