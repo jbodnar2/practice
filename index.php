@@ -23,8 +23,6 @@
 
 
       <!-- Main Content End -->
-      <iframe src="html-includes/include-a.html" frameborder="0" allow="fullscreen" loading="lazy"
-        onload="this.before(...(this.contentWindow.document.body||this.contentWindow.document).children);this.remove()"></iframe>
     </main>
     <footer class="footer"></footer>
   </div>
