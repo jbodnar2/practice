@@ -1,7 +1,5 @@
 (function () {
   document.addEventListener("click", (event) => {
-    event.preventDefault();
-
     if (event.target.matches("dialog")) {
       event.target.close();
     }

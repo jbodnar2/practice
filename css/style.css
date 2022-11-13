@@ -87,7 +87,7 @@ abbr[title] {
   text-decoration: underline; /* 2 */
   text-decoration: underline;
   -webkit-text-decoration: underline dotted currentColor;
-  text-decoration: underline dotted currentColor; /* 2 */
+          text-decoration: underline dotted currentColor; /* 2 */
 }
 
 /**
@@ -176,8 +176,7 @@ textarea {
  */
 
 button,
-input {
-  /* 1 */
+input { /* 1 */
   overflow: visible;
 }
 
@@ -187,8 +186,7 @@ input {
  */
 
 button,
-select {
-  /* 1 */
+select { /* 1 */
   text-transform: none;
 }
 
@@ -359,28 +357,32 @@ template {
   font-weight: 300 900;
 }
 
-:root {
+:root,
+dialog::backdrop,
+dialog {
   /* ----- Colors ----- */
   --color-dark: hsl(240, 43%, 12%);
   --color-base: hsl(249, 50%, 43%);
   --color-light: hsl(249, 100%, 95%);
 
-  --color-accent: hsl(39, 100%, 51%);
+  --color-accent-primary: hsl(39, 100%, 51%);
+  --color-accent-secondary: hsl(334, 98%, 45%);
   --color-white: hsl(0, 0%, 100%);
   --color-light-gray: hsl(0, 0%, 98%);
 
   /* ----- Font sizing ----- */
-  --fs-site-title: 4.209rem;
-  --fs-biggest: 3.157rem;
-  --fs-bigger: 2.369rem;
-  --fs-big: 1.33rem;
-  --fs-normal: 1rem;
-  --fs-small: 0.75rem;
+
+  --fs-h1: 2.488rem;
+  --fs-h2: 2.074rem;
+  --fs-h3: 1.728rem;
+  --fs-h4: 1.44rem;
+  --fs-h4: 1.25rem;
+  --fs-body: 1rem;
+  --fs-small: 0.833rem;
 
   /* ----- Font family ----- */
-  --font-base: "Figtree", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
-    Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  --ff-sans: "Figtree", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 
   /* ----- Font weights ----- */
   --fw-black: 900;
@@ -393,7 +395,95 @@ template {
 
   /* ----- Line Heights ----- */
   --line-height-body: 1.5;
-  --line-height-headings: 1;
+  --line-height-headings: 1.125;
+}
+
+.header {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  place-items: center;
+
+  color: hsl(0, 0%, 100%);
+
+  color: var(--color-white);
+  text-shadow: 1px 2px 4px hsla(0, 0%, 0%, 0.25);
+
+  background-image: url("/images/header01.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+
+  background-color: hsl(240, 43%, 12%);
+
+  background-color: var(--color-dark);
+  /* background-blend-mode: normal; */
+  /* background-blend-mode: color-dodge; */
+  /* background-blend-mode: color-burn; */
+  /* background-blend-mode: overlay; */
+  /* background-blend-mode: luminosity; */
+  /* background-blend-mode: hard-light; */
+  /* background-blend-mode: soft-light; */
+  /* background-blend-mode: multiply; */
+  background-blend-mode: difference;
+  /* background-blend-mode: hue; */
+  /* background-blend-mode: color; */
+}
+
+.header__title {
+  /* font-size: var(--fs-h1); */
+  line-height: 1.25;
+}
+
+.header__tagline {
+  line-height: 1.25;
+}
+
+.header__title--accent-text {
+  color: hsl(39, 100%, 51%);
+  color: var(--color-accent-primary);
+}
+
+.nav {
+  background-color: hsl(240, 43%, 12%);
+  background-color: var(--color-dark);
+}
+
+.nav__list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.nav__link {
+  display: inline-block;
+  padding: 1em;
+  color: hsl(0, 0%, 100%);
+  color: var(--color-white);
+  font-size: 0.833rem;
+  font-size: var(--fs-small);
+  font-weight: 300;
+  font-weight: var(--fw-light);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav__link--active {
+  background-color: hsl(0, 0%, 100%);
+  background-color: var(--color-white);
+  color: hsl(240, 43%, 12%);
+  color: var(--color-dark);
+}
+
+.nav__link:hover {
+  background-color: hsl(0, 0%, 100%);
+  background-color: var(--color-white);
+  color: hsl(240, 43%, 12%);
+  color: var(--color-dark);
 }
 
 *,
@@ -403,39 +493,21 @@ template {
 }
 
 body {
-  font-family: "Figtree", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
-    Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-family: var(--font-base);
-  font-size: var(--font-size);
+  font-family: "Figtree", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: var(--ff-sans);
+  font-size: 1rem;
+  font-size: var(--fs-body);
   line-height: 1.5;
   line-height: var(--line-height-body);
-}
-
-h1 {
-  font-size: 4.209rem;
-  font-size: var(--fs-site-title);
-  font-weight: 700;
-  font-weight: var(--fw-bold);
-}
-
-h2 {
-  font-size: 3.157rem;
-  font-size: var(--fs-biggest);
-  font-weight: 300;
-  font-weight: var(--fw-light);
-}
-
-h1,
-h2,
-h3 {
-  line-height: 1;
-  line-height: var(--line-height-headings);
+  background-color: var(--light-gray);
+  color: hsl(240, 43%, 12%);
+  color: var(--color-dark);
 }
 
 .parent-grid {
   display: grid;
-  grid-template-rows: 350px minmax(50px, auto) 1fr auto;
+  grid-template-rows: minmax(350px, auto) auto 1fr auto;
   min-height: 100vh;
 }
 
@@ -446,30 +518,79 @@ h3 {
   contain: layout;
 }
 
-.header,
 .footer {
   background-color: hsl(240, 43%, 12%);
   background-color: var(--color-dark);
   color: hsl(0, 0%, 100%);
   color: var(--color-white);
-  min-height: 1ch;
 }
 
-.header {
-  display: grid;
-  align-items: center;
-  justify-items: center;
-  place-items: center;
+:link:not(.nav__link), :visited:not(.nav__link), area[href]:not(.nav__link) {
+  color: hsl(249, 50%, 43%);
+  color: var(--color-base);
 }
 
-.header__tagline {
-  font-size: 1.33rem;
-  font-size: var(--fs-big);
+:link:not(.nav__link), :visited:not(.nav__link), area[href]:not(.nav__link) {
+  color: hsl(249, 50%, 43%);
+  color: var(--color-base);
 }
 
-.color-accent {
-  color: hsl(39, 100%, 51%);
-  color: var(--color-accent);
+:-moz-any-link:not(.nav__link) {
+  color: hsl(249, 50%, 43%);
+  color: var(--color-base);
+}
+
+:any-link:not(.nav__link) {
+  color: hsl(249, 50%, 43%);
+  color: var(--color-base);
+}
+
+:link:hover, :visited:hover, area[href]:hover {
+  text-decoration-color: hsl(334, 98%, 45%);
+  text-decoration-color: var(--color-accent-secondary);
+  text-decoration-thickness: 2px;
+}
+
+:link:hover, :visited:hover, area[href]:hover {
+  text-decoration-color: hsl(334, 98%, 45%);
+  text-decoration-color: var(--color-accent-secondary);
+  text-decoration-thickness: 2px;
+}
+
+:-moz-any-link:hover {
+  text-decoration-color: hsl(334, 98%, 45%);
+  text-decoration-color: var(--color-accent-secondary);
+  text-decoration-thickness: 2px;
+}
+
+:any-link:hover {
+  text-decoration-color: hsl(334, 98%, 45%);
+  text-decoration-color: var(--color-accent-secondary);
+  text-decoration-thickness: 2px;
+}
+
+h1 {
+  font-size: 2.488rem;
+  font-size: var(--fs-h1);
+}
+
+h2 {
+  font-size: 2.074rem;
+  font-size: var(--fs-h2);
+  font-weight: 300;
+  font-weight: var(--fw-light);
+}
+
+h3 {
+  font-size: 1.728rem;
+  font-size: var(--fs-h3);
+  line-height: 1.125;
+  line-height: var(--line-height-headings);
+}
+
+h4 {
+  font-size: 1.25rem;
+  font-size: var(--fs-h4);
 }
 
 /* ----- utilities.css ----- */
@@ -497,36 +618,18 @@ h3 {
   flex-direction: column;
   justify-content: space-between;
   padding: 1rem;
-  border: 1px solid hsla(0, 0%, 0%, 0.125);
+  border: 1px solid hsla(0, 0%, 0%, 0.25);
   box-shadow: 0px 2px 4px hsla(0, 0%, 0%, 0.125);
 }
 
 .card__image {
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
   max-width: 100%;
 }
 
 .card__title {
-  text-transform: capitalize;
-  font-weight: 700;
-  font-weight: var(--fw-bold);
-}
-
-.card__more-link {
-  display: inline-block;
-}
-
-.card__more-button {
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 0.75rem;
-  font-size: var(--fs-small, 0.75rem);
-  border: 1px solid hsl(240, 43%, 12%);
-  border: 1px solid var(--color-dark);
-  display: block;
-  text-align: center;
-  padding: 1em;
+  --fs-h3: 1.25rem;
 }
 
 .card__description {
@@ -536,7 +639,123 @@ h3 {
   -webkit-box-orient: vertical;
 }
 
+.card__info-button {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.833rem;
+  font-size: var(--fs-small);
+  font-weight: 300;
+  font-weight: var(--fw-light);
+
+  display: block;
+  text-align: center;
+
+  border: 2px solid hsl(240, 43%, 12%);
+
+  border: 2px solid var(--color-dark);
+  color: hsl(0, 0%, 100%);
+  color: var(--color-white);
+  background-color: hsl(240, 43%, 12%);
+  background-color: var(--color-dark);
+  padding: 1em;
+}
+
+.card__info-button:hover {
+    text-decoration: underline;
+    text-decoration-color: hsl(334, 98%, 45%);
+    text-decoration-color: var(--color-accent-secondary);
+    text-decoration-thickness: 2px;
+  }
+
 dialog::backdrop {
-  background: hsl(240, 43%, 12%);
-  background: var(--color-dark, hsla(240, 43%, 12%, 0.99));
+  background-color: hsl(240, 43%, 12%);
+  background-color: var(--color-dark);
+  background-image: url("/images/header01.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-blend-mode: difference;
+}
+
+dialog {
+  color: var(--color-accent-dark);
+}
+
+.dialog__title-link.dialog__title-link {
+  color: hsl(240, 43%, 12%);
+  color: var(--color-dark);
+  text-decoration-color: hsl(249, 50%, 43%);
+  text-decoration-color: var(--color-base);
+  text-decoration-thickness: 2px;
+}
+
+.dialog__title-link.dialog__title-link:hover {
+  text-decoration-color: hsl(334, 98%, 45%);
+  text-decoration-color: var(--color-accent-secondary);
+}
+
+.tags-list {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 0.25em;
+  display: flex;
+  gap: 1em;
+}
+
+.tags-list__link.tags-list__link {
+  display: inline-block;
+  color: hsl(249, 50%, 43%);
+  color: var(--color-base);
+  border: 2px solid currentColor;
+  padding: 0.125em 1em;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.833rem;
+  font-size: var(--fs-small);
+  font-weight: 600;
+  font-weight: var(--fw-semi-bold);
+}
+
+.tags-list__link.tags-list__link:hover {
+  color: hsl(334, 98%, 45%);
+  color: var(--color-accent-secondary);
+}
+
+.dl__title {
+  font-weight: 700;
+  font-weight: var(--fw-bold);
+}
+
+.category-links {
+  text-transform: uppercase;
+  font-size: 0.833rem;
+  font-size: var(--fs-small);
+}
+
+.search {
+  display: flex;
+
+  flex-wrap: wrap;
+}
+
+.search__button {
+  background-color: hsl(249, 50%, 43%);
+  background-color: var(--color-base);
+  padding: 1em 2em;
+  font-family: inherit;
+  font-size: 0.833rem;
+  font-size: var(--fs-small);
+  font-weight: 300;
+  font-weight: var(--fw-light);
+  text-transform: uppercase;
+  color: hsl(0, 0%, 100%);
+  color: var(--color-white);
+  border: none;
+}
+
+.search__input {
+  flex: 1 0 max-content;
+  padding: 0.5em 1.25em;
+  border: none;
+  font: inherit;
 }
