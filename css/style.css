@@ -611,6 +611,7 @@ h4 {
   grid-gap: 1rem;
   gap: 1rem;
   overflow: visible;
+  contain: layout;
 }
 
 .card {
@@ -620,6 +621,7 @@ h4 {
   padding: 1rem;
   border: 1px solid hsla(0, 0%, 0%, 0.25);
   box-shadow: 0px 2px 4px hsla(0, 0%, 0%, 0.125);
+  contain: layout;
 }
 
 .card__image {
@@ -759,3 +761,40 @@ dialog {
   border: none;
   font: inherit;
 }
+
+.footer {
+  contain: layout;
+  margin-top: 4rem;
+}
+
+.footer__top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.footer__bottom {
+  text-align: center;
+}
+
+.footer__support-button.footer__support-button {
+  padding: 1em;
+  display: block;
+  border: 1px solid currentColor;
+  color: hsl(0, 0%, 100%);
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+.footer__social-list.footer__social-list {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  gap: 1em;
+  font-size: 2em;
+}
+
+.footer__social-list.footer__social-list a {
+    color: white;
+  }
